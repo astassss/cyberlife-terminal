@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cyber Life Terminal</title>
+
+<style>
+
+body{
+margin:0;
+background:#05080c;
+font-family:monospace;
+color:#00ff9c;
+overflow:hidden;
+}
+
+/* GRID BACKGROUND */
+
+body::before{
+content:"";
+position:fixed;
+width:100%;
+height:100%;
+background-image:
+linear-gradient(rgba(0,255,150,0.05) 1px, transparent 1px),
+linear-gradient(90deg, rgba(0,255,150,0.05) 1px, transparent 1px);
+background-size:40px 40px;
+z-index:-1;
+}
+
+/* HEADER */
+
+.header{
+padding:15px;
+border-bottom:1px solid #00ff9c;
+color:#00ff9c;
+text-shadow:0 0 8px #00ff9c;
+letter-spacing:2px;
+}
+
+/* TERMINAL */
+
+.terminal{
+height:calc(100vh - 60px);
+padding:20px;
+overflow-y:auto;
+font-size:14px;
+}
+
+/* TEXT GLOW */
+
+.terminal div{
+margin:2px 0;
+text-shadow:0 0 6px #00ff9c;
+}
+
+/* CURSOR */
+
+.cursor{
+display:inline-block;
+width:10px;
+background:#00ff9c;
+margin-left:5px;
+animation:blink 1s infinite;
+}
+
+@keyframes blink{
+0%{opacity:1;}
+50%{opacity:0;}
+100%{opacity:1;}
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar{
+width:6px;
+}
+
+::-webkit-scrollbar-thumb{
+background:#00ff9c;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+CYBER LIFE SECURE TERMINAL v4.2
+</div>
+
+<div id="terminal" class="terminal"></div>
+
+<script>
+
+const terminal = document.getElementById("terminal");
+
+const lines = [
+
+"> Initializing secure terminal...",
+"> Loading Cyber Life corporate network...",
+"> Establishing encrypted connection...",
+"> Authenticating access node...",
+"> Bypassing firewall...",
+"> Access granted",
+"",
+"> ----------------------------------------",
+"> CYBER LIFE PHARMACEUTICALS DATABASE",
+"> ----------------------------------------",
+"",
+"> Company Name: Cyber Life Pharmaceuticals",
+"> Industry: Biotechnology / Pharmaceutical Research",
+"> Founded: 1988",
+"> Headquarters: Zurich, Switzerland",
+"> Global Presence: 42 Countries",
+"> Employees: 14870",
+"",
+"> Corporate Vision:",
+"> Enhancing human life through advanced biotechnology",
+"",
+"> GLOBAL FACILITIES",
+"",
+"1> Zurich Research Center",
+"2> Boston Biotech Laboratory",
+"3> Tokyo Pharmaceutical Institute",
+"4> Berlin Molecular Facility",
+"5> Singapore Bioengineering Hub",
+"6> Toronto Clinical Development Center",
+"",
+"> ACTIVE RESEARCH PROJECTS",
+"",
+"> Project Helix - DNA Repair Therapy",
+"> Project Aurora - Advanced Antiviral Platform",
+"> Project Genesis - Artificial Cell Regeneration",
+"> Project Atlas - Muscular Enhancement Biotechnology",
+"> Project NeuroLink - Neural Interface Compounds",
+"",
+"> DRUG DEVELOPMENT PIPELINE",
+"",
+"> CLX-101 Regenerative Tissue Compound",
+"> CLX-204 Neural Performance Enhancer",
+"> CLX-317 Immune System Optimization",
+"> CLX-402 Synthetic Antiviral Therapy",
+"> CLX-550 Cellular Aging Inhibitor",
+"",
+"> INTERNAL RESEARCH LOGS",
+"",
+"> Lab Report 8892 Cellular regeneration improving",
+"> Lab Report 8901 Neural compound stability confirmed",
+"> Lab Report 8914 Immune response increased by 38%",
+"",
+"> WARNING: Restricted experiment logs detected",
+"> Attempting privilege escalation...",
+"",
+"> Escalation successful",
+"",
+"> CLASSIFIED DIVISION DETECTED",
+"",
+"> Division: Advanced Bioengineering Unit",
+"> Security Level: Omega",
+"",
+"> Decrypting classified files...",
+"",
+"> Genetic modification trials",
+"> Synthetic organ development",
+"> Neural enhancement program",
+"",
+"> SECURITY ALERT",
+"> Cyber Life monitoring system active",
+"",
+"> Tracing connection...",
+"",
+"> Downloading research archives...",
+"> Extracting laboratory data...",
+"",
+"> Download complete",
+"",
+"> Disconnecting from Cyber Life servers..."
+
+];
+
+let index = 0;
+
+function typeLine(){
+
+if(index < lines.length){
+
+const p = document.createElement("div");
+p.textContent = lines[index];
+
+terminal.appendChild(p);
+
+terminal.scrollTop = terminal.scrollHeight;
+
+index++;
+
+setTimeout(typeLine,1500);
+
+}
+
+}
+
+typeLine();
+
+</script>
+
+</body>
+</html>
